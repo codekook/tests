@@ -5,6 +5,7 @@ def main():
 
 def test_hello(stringinput):
     assert stringinput.isalpha()
+    assert stringinput == "Chloe"
 
 if __name__ == "__main__":
     main()
