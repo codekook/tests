@@ -1,11 +1,5 @@
-import pytest
+from ex4a import hello
 
-def main():
-    test_hello()
-
-def test_hello(stringinput):
-    assert stringinput.isalpha()
-    assert stringinput == "Chloe"
-
-if __name__ == "__main__":
-    main()
+def test_hello(monkeypatch, tmp_path):
+    monkeypatch.setattr("sys.argv", ["ex4a.py", "chloe"])
+    assert hello() == ("hello, chloe")
